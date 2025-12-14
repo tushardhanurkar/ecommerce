@@ -19,17 +19,16 @@ const Home = () => {
 
       <Slider />
 
-      {/* Section Header */}
       <div className="flex h-20 justify-center items-center bg-[#fc2b58]">
         <h1 className="text-xl md:text-2xl font-semibold text-white">Best Selling SmartPhones</h1>
       </div>
 
-      {/* Smartphones */}
 <div className="flex flex-row flex-wrap gap-8 m-10 mb-10 items-center justify-center">
 
         {mobileData.map((item) => (
           <div 
             key={item.id}
+            data-aos="fade-left"
             className="rounded-xl p-4 shadow-lg bg-white w-72 hover:shadow-2xl transition-all duration-300"
           >
             <img src={item.image} alt={item.name} className="w-full h-72 object-contain" />
@@ -56,6 +55,7 @@ const Home = () => {
         {laptopData.map((item) => (
           <div 
             key={item.id}
+            data-aos="fade-right"
             className="rounded-xl p-4 shadow-lg bg-white w-72 hover:shadow-2xl transition-all duration-300"
           >
             <img src={item.image} alt={item.name} className="w-full h-72 object-contain" />
@@ -84,6 +84,7 @@ const Home = () => {
         {gamingData.map((item) => (
           <div 
             key={item.id}
+            data-aos="fade-up"
             className="rounded-xl p-4 shadow-lg bg-white w-72 hover:shadow-2xl transition-all duration-300"
           >
             <img src={item.image} alt={item.name} className="w-full h-72 object-contain" />

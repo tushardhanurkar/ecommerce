@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './Components/Navbar'
 import Home from './Components/Home'
 import { Route, Routes } from 'react-router-dom'
@@ -10,12 +10,25 @@ import Buynowpage from './Components/Buynowpage'
 import Signup from './Signup'
 import Login from './Login'
 import Checkout from './Checkout'
+import AOS from "aos";
+import { easeInOut } from 'framer-motion'
+
 
 const App = () => {
+
+  useEffect(()=>{
+
+    AOS.init({
+
+      duration:1000,
+      once:true,
+      easing:"ease-in-out"
+    },[])
+  })
   return (
     <>
       <Navbar />
-
+<div className="pt-[70px] md:pt-[140px]">
       <Routes>                                       
         <Route path="/" element={<Home />} />        
         <Route path="/mobile" element={<Mobile/>} /> 
@@ -30,6 +43,7 @@ const App = () => {
 
 
       </Routes> 
+      </div>
     </>
   )
 }

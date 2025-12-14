@@ -8,6 +8,8 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom';
 import 'flowbite';
 import { CartProvider } from './context/Cartcontxt.jsx';
+import 'aos/dist/aos.css';
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

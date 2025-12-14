@@ -11,3 +11,36 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-flow {
+  background: linear-gradient(
+    90deg,
+    #7dd3fc,
+    #fde68a,
+    #fdba74,
+    #7dd3fc
+  );
+  background-size: 300% 300%;
+  animation: gradientFlow 8s ease infinite;
+}
