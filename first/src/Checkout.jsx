@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Checkout = () => {
+const Checkout = () =>
+
+  
+  {
   const location = useLocation();
   const navigate = useNavigate();
   const product = location.state;
@@ -71,11 +74,11 @@ const Checkout = () => {
     return <h1 className="text-center text-xl mt-10">No product selected</h1>;
   }
 
+useEffect (()=>{
 
-  const demo = {
+    window.scrollTo(0,0)
 
-
-  }
+  },[])
   return (
     <div className="p-6 max-w-3xl mx-auto">
 
