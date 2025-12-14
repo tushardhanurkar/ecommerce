@@ -23,7 +23,6 @@ const orderSchema = mongoose.Schema({
     }
 });
 
-// ✔ MUST BE SINGULAR — Mongoose will auto-create "orders"
 const Order = mongoose.model("Orders", orderSchema);
 
 module.exports = Order;

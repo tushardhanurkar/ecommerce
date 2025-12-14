@@ -7,16 +7,14 @@ const Order = require("./models/Order");
 
 const app = express();
 
-// ---------------- MIDDLEWARES ----------------
 app.use(cors());
 app.use(bodyParser.json());
 
-// ---------------- TEST ROUTE ----------------
 app.get("/", (req, res) => {
     res.send("Server is working!");
 });
-
-// ---------------- LOGIN ----------------
+  
+// ----- LOGIN ----------------
 app.post('/login', async (req, res) => {
     try {
         const { username, password } = req.body;
@@ -43,7 +41,7 @@ app.post('/login', async (req, res) => {
     }
 });
 
-// ---------------- SIGNUP ----------------
+// -- SIGNUP -----------
 app.post('/signup', async (req, res) => {
     try {
         const { username, email, password } = req.body;
@@ -74,7 +72,7 @@ app.post('/signup', async (req, res) => {
     }
 });
 
-// ---------------- PLACE ORDER ----------------
+// ------ PLACE ORDER -----------
 app.post('/placeorder', async (req, res) => {
     try {
         console.log("Received Order Body:", req.body);
@@ -114,7 +112,7 @@ app.post('/placeorder', async (req, res) => {
     }
 });
 
-// ---------------- DATABASE & START SERVER ----------------
+// -- DATABASE & START SERVER -------
 mongoose.connect("mongodb://127.0.0.1:27017/authdb")
     .then(() => {
         console.log("MongoDB Database Connected");
