@@ -1,6 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { buyNowDetails } from "../Components/Buynowdetails";
 import Footer from "./Footer";
+import { useEffect } from "react";
+
 
 export default function BuyNowPage() {
   const { id } = useParams();
@@ -8,6 +10,11 @@ export default function BuyNowPage() {
   const product = buyNowDetails[id];
 
   if (!product) return <h1 className="text-center text-2xl mt-10">Product Not Found</h1>;
+
+  useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
 
   return (
 
@@ -17,7 +24,10 @@ export default function BuyNowPage() {
     
     >
       <div 
+      data-aos="fade-left"
+
         className="
+        
           rounded-xl shadow-2xl p-6 
           w-full max-w-5xl 
           bg-white/10 backdrop-blur-md
@@ -49,11 +59,12 @@ export default function BuyNowPage() {
           <h2 className="font-bold mt-5 text-xl text-black">Available Colors:</h2>
           <div className="flex gap-3 mt-2 flex-wrap">
             {product.colors.map((c, index) => (
-              <div 
+              <div
                 key={index} 
-                className="px-3 py-1 rounded-lg bg-white/20 backdrop-blur-sm text-white"
-              >
+                className="px-3 py-1 rounded-lg text-black"
+              ><li>
                 {c}
+                </li>
               </div>
             ))}
           </div>

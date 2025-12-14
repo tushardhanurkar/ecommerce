@@ -5,6 +5,8 @@ const Checkout = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const product = location.state;
+  const backendAvailable = false;
+
 
   const [formData, setFormData] = useState({
     name: "",
@@ -26,8 +28,15 @@ const Checkout = () => {
   };
 
     const handleSubmit = async () => {
+
+      if (!backendAvailable) {
+    alert("This is just a Frontend Demo version");
+  }
+  else {
     setSuccessMsg("");
     setErrorMsg("");
+
+  }
 
     const orderData = {
       ...formData,
@@ -62,6 +71,11 @@ const Checkout = () => {
     return <h1 className="text-center text-xl mt-10">No product selected</h1>;
   }
 
+
+  const demo = {
+
+
+  }
   return (
     <div className="p-6 max-w-3xl mx-auto">
 
@@ -130,7 +144,7 @@ const Checkout = () => {
 
       {/* PLACE ORDER */}
       <button
-        onClick={handleSubmit}
+        onClick={handleSubmit || <h1>This is just a Frontend Demo version</h1>}
         className="bg-blue-600 text-white w-full py-3 rounded-xl text-lg font-semibold"
       >
         Place Order

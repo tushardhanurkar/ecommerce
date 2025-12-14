@@ -63,6 +63,8 @@ const Signup = () => {
                     />
 
                     <button 
+                      onClick={() => alert("This is just a Frontend Demo version")}
+
                         type="submit"
                         className="bg-blue-600 text-white w-full p-2 rounded-xl hover:bg-blue-700"
                     >

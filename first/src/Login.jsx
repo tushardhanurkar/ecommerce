@@ -8,6 +8,8 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handlesubmit = async (e) => {
+
+
         e.preventDefault();
 
         const data = { username, password };
@@ -61,6 +63,8 @@ const Login = () => {
                     <button 
                         type="submit"
                         className="bg-blue-600 text-white w-full p-2 rounded-xl hover:bg-blue-700"
+                          onClick={() => alert("This is just a Frontend Demo version")}
+
                     >
                         Login
                     </button>
